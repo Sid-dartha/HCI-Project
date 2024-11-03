@@ -61,7 +61,7 @@
 <body>
     <div class="info-box">
         <h2>User Information</h2>
-        <form action="#" method="post">
+        <form onsubmit="nexttabwillbe(); return false;">
             <div class="input-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
@@ -93,6 +93,20 @@
             <button type="submit" class="submit-button">Continue</button>
         </form>
     </div>
+    <script>
+        function nexttabwillbe()
+        {
+            const age=document.getElementById("age").value;
+            if (age>=14 && age<=24)
+                window.location.href="14-24.html";
+            else if (age>=25 && age<=45)
+                window.location.href="25-45.html";
+            else if (age>=46 && age<=60)
+                window.location.href="46-60.html"
+            else
+                alert("Age between 14 to 60 are only allowed");
+        }
+    </script>
 </body>
 
 </html>
